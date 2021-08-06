@@ -1,12 +1,14 @@
+// enum Role{SUPERADMIN,ADMIN,SUBSCRIBER};
+import Role from './enum'
 export class User  {
-  //need to initialize in strict mode
-    id: number=-1;
-    firstName: string='';
+  
+    id!: number
+    firstName!: string
     middleName?: string;
-    lastName: string='';
-    email: string='';
-    phoneNumber: string='';
-    role: string='';
-    address: string='';
-    customerName: string='';
+    lastName!: string
+    email!: string
+    phoneNumber!: string
+    role!:Role;
+    address!: string
+    customerName!: string
   }

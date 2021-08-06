@@ -1,20 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from './user.model'
-
-
-// type UserEdit = {
-
-
-//   firstName: string;
-//   middleName?: string;
-//   lastName: string;
-//   email: string;
-//   phoneNumber: string;
-//   role: string;
-//   address: string;
-//   customerName: string;
-// }
+import {environment} from '../environments/environment'
 type Response = {
   message: string;
 }
@@ -24,15 +11,10 @@ type Response = {
 })
 export class HttpRequestService {
 
-  baseURL = 'http://localhost:3000/api/';
+  baseURL = environment.BASE_URL;
   constructor(private http: HttpClient) {
 
   }
-
-  log() {
-    console.log("service works!!!!")
-  }
-
   get() {
     return this.http.get<User[]>(this.baseURL)
 
